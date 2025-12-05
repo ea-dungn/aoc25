@@ -1,4 +1,4 @@
-from toolz import partial
+from functools import partial
 import copy
 from aoc2025 import pipe, map, runner, filter
 
