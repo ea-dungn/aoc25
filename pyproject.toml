@@ -12,3 +12,8 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/aoc2025"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.0",
+]
