@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Any, TypeVar, overload
 from functools import reduce as _reduce
 import itertools
+from pprint import pprint
 
 T = TypeVar("T")
 S = TypeVar("S")
@@ -136,9 +137,9 @@ def runner(
     def main(mode: str | None = None):
         if mode == "example" or mode is None:
             lines = slurp_strip(dir_path / example_file)
-            print(solve(lines))
+            pprint(solve(lines))
         if mode == "input" or mode is None:
             lines = slurp_strip(dir_path / input_file)
-            print(solve(lines))
+            pprint(solve(lines))
 
     return main
