@@ -129,17 +129,12 @@ def runner(
     day_file: str,
     solve: Callable[[list[str]], Any],
     example_file: str = "example",
-    input_file: str = "input",
 ):
     """Returns a main function for a day module."""
     dir_path = Path(day_file).parent
 
-    def main(mode: str | None = None):
-        if mode == "example" or mode is None:
-            lines = slurp_strip(dir_path / example_file)
-            pprint(solve(lines))
-        if mode == "input" or mode is None:
-            lines = slurp_strip(dir_path / input_file)
-            pprint(solve(lines))
+    def main(input_file: str | None = None):
+        lines = slurp_strip(dir_path / input_file)
+        pprint(solve(lines))
 
     return main
