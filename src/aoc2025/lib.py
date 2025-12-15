@@ -122,9 +122,9 @@ def slurp(filename: str) -> list[str]:
 def slurp_strip(filename: str) -> list[str]:
     """Read all lines from a file, stripping whitespace."""
     with open(filename, "r") as f:
-        # return [line.strip() for line in f]
+        return [line.strip() for line in f]
         # day6 part2
-        return [line.rstrip('\n') for line in f]
+        # return [line.rstrip('\n') for line in f]
 
 
 def runner(
